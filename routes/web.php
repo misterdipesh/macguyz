@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('user');
+Route::get('/',function()
+{
+	return view('register');
 });
+Route::resource('/user','UserpanelController');

@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form action="/result" method="get">
+<form action="{{route('user.show')}}" method="">
   file id:<br>
   <input type="text" name="fid"><br>
   file pin:<br>
@@ -13,7 +13,7 @@
   <br>
 
   <button type="submit">login</button>
-  
+
 </form> 
 
   
