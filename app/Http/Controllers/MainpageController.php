@@ -11,3 +11,5 @@ class MainpageController extends Controller
     	return view('mainpage');
     }
 }
+
+

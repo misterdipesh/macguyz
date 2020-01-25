@@ -48,6 +48,10 @@ class FileinfoController extends Controller
 
         $fileinfo->save();
 
+        return view('mainpage');
+
+
+
          
 
 

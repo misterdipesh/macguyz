@@ -23,11 +23,11 @@
         <button type="button" class="btn btn-primary">register</button>
               
   </a>  
-   <a href="">
+   <a href="/admin/dashboard">
               
       <button type="button" class="btn btn-info">admin</button>              
    </a>
-        <a href="">
+        <a href="/user">
               
            <button type="button" class="btn btn-success">user</button>
               

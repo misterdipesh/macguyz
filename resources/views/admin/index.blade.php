@@ -18,6 +18,12 @@
 <body>
 	<h1>hello admin   </h1> <br>
 
+	<a href="{{ route('mainpage') }}">
+              
+        <button type="button" class="btn btn-primary">return to mainpage </button>
+              
+  </a>  
+
 
 
 <div class="container">

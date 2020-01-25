@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','MainpageController@index');
+Route::get('/','MainpageController@index')->name('mainpage');
 Route::resource('/fileinfo','FileinfoController');
 
 
