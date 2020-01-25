@@ -14,11 +14,13 @@ class CreateFileinfosTable extends Migration
     public function up()
     {
         Schema::create('fileinfos', function (Blueprint $table) {
-            $table->bigIncrements('fid');
-            $table->integer('fpin');
-            $table->integer('place');
-            $table->boolean('problem');
-            $table->string('problem_desc');
+            $table->bigIncrements('id')->autoIncrement();  
+            $table->integer('fid');  
+
+            $table->integer('fpin');   
+            $table->integer('place')->nullable($value = true); 
+            $table->boolean('problem')->nullable($value = true); 
+            $table->text('problem_desc')->nullable($value = true); 
 
 
 

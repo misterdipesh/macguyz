@@ -5,14 +5,15 @@
 </head>
 <body>
 
-<form action="{{route('user.show')}}" method="">
+<form action="{{ route('user.checkfile')}}" method="get">
   file id:<br>
-  <input type="text" name="fid"><br>
+  <input type="text" name="fid" value="123"><br>
   file pin:<br>
-  <input type="text" name="fpin">
+  <input type="text" name="fpin" value="123">
   <br>
 
   <button type="submit">login</button>
+
 
 </form> 
 

@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
 use App\Fileinfo;
+
+use App\Admin;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class FileinfoController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class FileinfoController extends Controller
      */
     public function index()
     {
-        $fileinfos =Fileinfo::all();
-        return view('result',compact('fileinfos'));
+         $admins =Fileinfo::all();
+        return view('admin.index',compact('admins'));
     }
 
     /**
@@ -25,7 +27,7 @@ class FileinfoController extends Controller
      */
     public function create()
     {
-     return view('register');
+        //
     }
 
     /**
@@ -35,32 +37,17 @@ class FileinfoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   $place=0; 
-        $problem=false;
-        $problem_desc=null;
-        $fileinfo=new Fileinfo;
-        $fileinfo->fid = $request->fid;
-
-        $fileinfo->fpin = $request->fpin;
-        $fileinfo->place= $request->$place;
-        $fileinfo->problem= $request->$problem;
-        $fileinfo->problem_desc= $request->$problem_desc;
-
-        $fileinfo->save();
-
-         
-
-
-    
+    {
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Fileinfo  $fileinfo
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Fileinfo $fileinfo)
+    public function show(Admin $admin)
     {
         //
     }
@@ -68,33 +55,46 @@ class FileinfoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Fileinfo  $fileinfo
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fileinfo $fileinfo)
-    {
-        //
+    public function edit( $id)
+    {  
+
+        
+          $admin =Fileinfo::find($id);
+          
+            return view('admin.edit')->with('admin',$admin);
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Fileinfo  $fileinfo
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fileinfo $fileinfo)
+    public function update(Request $request, $id)
     {
-        //
+         $admin = fileinfo::find($id);
+             $admin->place = $request->input('place');
+           $admin->problem = $request->input('problem');
+           $admin->problem_desc = $request->input('problem_desc');
+           $admin->save();
+
+           return redirect('admin/admin'); 
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Fileinfo  $fileinfo
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fileinfo $fileinfo)
+    public function destroy(Admin $admin)
     {
         //
     }
