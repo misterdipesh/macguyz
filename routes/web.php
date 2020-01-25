@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::get('/','MainpageController@index');
 Route::resource('/fileinfo','FileinfoController');
 
 
@@ -28,7 +28,7 @@ Route::get('/user/checkfile','UserController@checkFile')->name('user.checkfile')
 Route::get('/home', 'HomeController@index')->name('home');
   
 Route::get('test-logout', function () {
- 	Auth::logout(); 
+ Auth::logout(); 
 
  	return redirect('login');
  	}

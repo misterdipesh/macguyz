@@ -10,8 +10,13 @@
 
 	@foreach( $results as $result)
        
-  fileid:{{ $result->fid }}
-  file place:{{ $result->place }}
+  fileid:{{ $result->fid }} <br>
+  file place:{{ $result->place }} <br>
+  <br>
+  file problem:{{ $result->problem }}
+  <br>
+
+  file problem description:{{ $result->problem_desc }}
   
        
 

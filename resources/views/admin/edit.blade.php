@@ -22,7 +22,7 @@
 
                        <form class="form-inline" role="form">
                         <div class="form-group">
-                        	dd($admin);
+                        	
                           <label for="name">place</label>
                           <input type="text" class="form-control" id="place" name="place" value="{{ $admin->place }}">
                         </div>
